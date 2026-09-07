@@ -1,0 +1,34 @@
+<!-- write a jQuery program to validate the darshan enrollment no when user leave the textbox
+(blur). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+
+</head>
+<body>
+    <label for="enrollment">Enrollment No:</label>
+    <input type="text" id="enrollment" placeholder="Enter 12-digit number">
+    <p id="Error"></p>
+    <script>
+
+        $("enrollment").blur((event) => {
+            obj = $(event.currentTarget).val();
+            pattern = /^\d{12}$/;
+
+            if(pattern.test(obj))
+            {
+                $(event.currentTarget).css("border", "2px solid green");
+                $("#Error").text("");
+            }else{
+                $(event.currentTarget).css("border", "2px solid red");
+                $("#Error").text("Invalid Enrollment!");
+            }
+        })
+    </script>
+</body>
+</html>

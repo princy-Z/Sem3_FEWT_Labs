@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-4-1</title>
+</head>
+<body>
+    <script>
+        start = parseInt(prompt("Enter starting of range:"));
+        end = parseInt(prompt("Enter ending of range:"));
+        isPrime = 0;
+        
+        for (i = start; i <= end; i++)
+        {  
+            isPrime = 1;
+            if (i <= 1)
+            {
+                continue;
+            }
+            for (j = 2; j <= i/2; j++)
+            {
+                if (i % j == 0)
+               {
+                isPrime = 0;
+                break;
+               }
+            }
+        if (isPrime == 1)
+        {
+            document.write(i);
+        }
+    }
+    </script>
+</body>
+</html>

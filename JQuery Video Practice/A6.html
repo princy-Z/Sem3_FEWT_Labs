@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div id="myDiv">
+        <h1 class="abc">Hello</h1>
+        <span class="abc">dnjsnvsjndv</span>
+        <ul>
+            <li class="abc">Rajkot</li>
+            <li class="abc">Surat</li>
+            <li class="abc" id="myLil">Morbi</li>
+            <li class="abc">Ahemdabad</li>
+            <li class="abc" id="MylilL">Vadodara</li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(()=>{
+            //Ancestors(Parent,Parents,ParentsUntil)
+            console.log($("#myLil").parent());
+            console.log($("#myLil").parents());
+            console.log($("#myLil").parentsUntil("body"));
+
+            //Descendants(children,find)
+            console.log($("#myDiv").children());
+            console.log($("#myDiv").find("ul"));
+
+            //Siblings()
+            console.log($("#myLil").siblings());
+            console.log($("#myLil").next());
+            console.log($("#myLil").nextAll());
+            console.log($("#myLil").nextUntil("#MylilL"));
+            console.log($("#myLil").prev());
+            console.log($("#myLil").prevAll());
+            console.log($("#mylilL").prevUntil("#myLil"));
+
+            //Filterting(First,Last,Equal,Filter,Not)
+            console.log($("#myLil").first());
+            console.log($("#myLil").last());
+            console.log($("#myLil").eq(2));
+            console.log($(".abc").filter("li"));
+            console.log($(".abc").not("li"));
+        });
+    </script>
+</body>
+</html>

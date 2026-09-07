@@ -1,0 +1,33 @@
+ <!-- WAP to recognize which keyboard event is ƒired.  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-8-3</title>
+</head>
+<body>
+    <input id="my1" onkeydown="KeyDown()" />
+    <input id="my2" onkeyup="KeyUp()"/>
+    <input id="my3" onkeypress="KeyPress()"/>
+    <p id="Info"></p>
+
+    <script>
+        function KeyDown()
+        {
+            k = document.getElementById("my1");
+            document.getElementById("Info").innerHTML = "Key Down!"
+        }
+        function KeyUp()
+        {
+            k = document.getElementById("my2");
+            document.getElementById("Info").innerHTML = "Key Up!"
+        }
+        function KeyPress()
+        {
+            k = document.getElementById("my3");
+            document.getElementById("Info").innerHTML = "Key Pressed!"
+        }
+    </script>
+</body>
+</html>

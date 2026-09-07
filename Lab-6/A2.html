@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-6-2</title>
+</head>
+<body>
+    <script>
+        arr = [1,2,3,4,5,6];
+        document.write("<br/>");
+        //push()
+        arr.push(7);
+        document.write("After push an element: "+arr);
+        document.write("<br/>");
+        //pop()
+        removed1 = arr.pop();
+        document.write("After pop an element: "+arr);
+        document.write("<br/>");
+        document.write("Removed element: "+removed1);
+        document.write("<br/>");
+        //shift()
+        removed2 = arr.shift(8);
+        document.write("After swift an element: "+arr);
+        document.write("<br/>");
+        document.write("Removed element: "+removed2);
+        document.write("<br/>");
+        
+        //unshift()
+        arr.unshift(8);
+        document.write("After unswift an element: "+arr);
+        document.write("<br/>");
+        
+        //slice()
+        document.write("Slice : "+arr.slice(2,4));
+        document.write("<br/>");
+
+        //splice()
+        arr.splice(2,3,"Hello","World");
+        document.write("After splice an element: "+arr);
+        document.write("<br/>");
+
+        arr = [6,4,2,3,2,1,101];
+        arr.sort();
+        document.write(arr);
+    </script>
+</body>
+</html>

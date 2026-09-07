@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <style>
+        .Main {
+            width: 100vw;
+        }
+
+        .Head {
+            height: 10%;
+            width: 100%;
+            background-color: rgb(9, 149, 7);
+            color: rgb(255, 255, 255);
+        }
+
+        .RCall {
+            position: relative;
+            width: 50%;
+            height: 80%;
+            font-size: 20px;
+            line-height: 20px;
+            background-color: rgb(218, 221, 226);
+            float: left;
+            padding-top: 2%;
+            padding-left: 3%;
+            padding-right: 3%;
+            padding-bottom: 4%;
+            margin-left: 2.5%;
+        }
+
+        .TArea {
+            position: fixed;
+            right: 2%;
+            height: 50%;
+            width: 35%;
+            background-color: rgb(59, 118, 214);
+            float: right;
+        }
+
+        #Abs {
+            margin: 5% 7%;
+            background-color: rgb(236, 240, 245);
+            border-radius: 20px;
+        }
+
+        .btn {
+            background-color: rgb(59, 118, 214);
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            height: 5%;
+            width: 95%;
+            padding: 1% 3% 1% 3%;
+        }
+
+        button {
+            border-radius: 7px;
+            background-color: rgb(195, 195, 231);
+            color: rgb(31, 29, 29);
+            font-weight: 600;
+            font-size: 17px;
+            width: 7%;
+            padding: 0.3% 1% 0.3% 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Main">
+        <div class="Head">
+            <h1
+                style="text-align:center;padding-top:0.5%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                Attendance</h1>
+        </div>
+
+        <div class="RCall">
+            <script>
+                for (i = 101; i < 166; i++) {
+                    document.write(`<input onclick='changeAbPr()' id ='${i}' type='checkbox' value='${i}' /> ${i} <br /><hr/>`);
+                }
+            </script>
+        </div>
+        <div class="TArea">
+            <textarea rows="20" cols="60"></textarea>
+        </div>
+    </div>
+
+    <script>
+        
+        function changeAbPr() {
+            checkBox = document.getElementsByTagName("input");
+            list = [];
+
+            for (i = 0; i < checkBox.length; i++) {
+                // console.log(checkBox[i]);
+                if (checkBox[i].checked) {
+                    list.push(checkBox[i].value);
+                }
+            }
+            document.getElementsByTagName("textarea")[0].innerHTML = list.join(",");
+        }
+
+    </script>
+</body>
+
+</html>

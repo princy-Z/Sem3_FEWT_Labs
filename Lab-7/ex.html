@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Graphical Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #1e1e24;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            background: #2d2d34;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            max-width: 900px;
+            width: 100%;
+        }
+        .calculator-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .graph-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #25252b;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        #screen {
+            width: 100%;
+            height: 60px;
+            background-color: #0f0f12;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            color: #00ffcc;
+            font-size: 1.5rem;
+            text-align: right;
+            padding: 10px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+        button {
+            padding: 15px 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #3e3e46;
+            color: #fff;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #4e4e56;
+        }
+        button.operator {
+            background-color: #f39c12;
+            color: #fff;
+        }
+        button.operator:hover {
+            background-color: #e67e22;
+        }
+        button.clear {
+            background-color: #e74c3c;
+        }
+        button.clear:hover {
+            background-color: #c0392b;
+        }
+        button.equal {
+            background-color: #2ecc71;
+            grid-column: span 2;
+        }
+        button.equal:hover {
+            background-color: #27ae60;
+        }
+        canvas {
+            background: #1a1a1a;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 400px;
+            height: 350px;
+        }
+        .graph-controls {
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Calculator Panel -->
+    <div class="calculator-side">
+        <input type="text" id="screen" placeholder="0" readonly />
+        <div class="buttons">
+            <button class="clear" onclick="clearScreen()">AC</button>
+            <button onclick="backspace()">DEL</button>
+            <button onclick="input('(')">(</button>
+            <button onclick="input(')')">)</button>
+            <button class="operator" onclick="input('/')">/</button>
+
+            <button onclick="scientific('sin')">sin</button>
+            <button onclick="input('7')">7</button>
+            <button onclick="input('8')">8</button>
+            <button onclick="input('9')">9</button>
+            <button class="operator" onclick="input('*')">&times;</button>
+
+            <button onclick="scientific('cos')">cos</button>
+            <button onclick="input('4')">4</button>
+            <button onclick="input('5')">5</button>
+            <button onclick="input('6')">6</button>
+            <button class="operator" onclick="input('-')">-</button>
+
+            <button onclick="scientific('tan')">tan</button>
+            <button onclick="input('1')">1</button>
+            <button onclick="input('2')">2</button>
+            <button onclick="input('3')">3</button>
+            <button class="operator" onclick="input('+')">+</button>
+
+            <button onclick="scientific('log')">log</button>
+            <button onclick="scientific('sqrt')">&radic;</button>
+            <button onclick="input('0')">0</button>
+            <button onclick="input('.')">.</button>
+            <button onclick="input('x')">X</button>
+
+            <button onclick="scientific('pi')">&pi;</button>
+            <button onclick="scientific('e')">e</button>
+            <button onclick="input('**')">^</button>
+            <button class="equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <!-- Graph Panel -->
+    <div class="graph-side">
+        <canvas id="graphCanvas" width="400" height="350"></canvas>
+        <div class="graph-controls">
+            <button class="operator" style="width: 80%;" onclick="plotGraph()">Plot Function f(X)</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const screen = document.getElementById('screen');
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Input appending logic
+    function input(value) {
+        screen.value += value;
+    }
+
+    // Reset interface variables
+    function clearScreen() {
+        screen.value = '';
+        clearCanvas();
+    }
+
+    // Drop last entered digit/character
+    function backspace() {
+        screen.value = screen.value.slice(0, -1);
+    }
+
+    // Handle single macro-scientific parameters safely 
+    function scientific(type) {
+        if (type === 'sin') screen.value += 'Math.sin(';
+        else if (type === 'cos') screen.value += 'Math.cos(';
+        else if (type === 'tan') screen.value += 'Math.tan(';
+        else if (type === 'log') screen.value += 'Math.log10(';
+        else if (type === 'sqrt') screen.value += 'Math.sqrt(';
+        else if (type === 'pi') screen.value += 'Math.PI';
+        else if (type === 'e') screen.value += 'Math.E';
+    }
+
+    // Process evaluation string safely 
+    function calculate() {
+        try {
+            let expression = screen.value;
+            // Catch implicit multiplications next to constants or variables
+            expression = expression.replace(/(\d)(Math|x|\()/g, '$1*$2');
+            
+            // Prohibit parsing x standalone without explicit graph engine execution loop
+            if(expression.includes('x')) {
+                alert("Expression contains variable 'x'. Use the 'Plot Function f(X)' option instead.");
+                return;
+            }
+            
+            let result = eval(expression);
+            if (result === undefined || isNaN(result)) {
+                screen.value = 'Error';
+            } else {
+                screen.value = Number(result.toFixed(8)); // Clear floating rounding errors
+            }
+        } catch (error) {
+            screen.value = 'Error';
+        }
+    }
+
+    // Clear Canvas and Draw Cartesian System lines
+    function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw standard X & Y Axes Grid
+        ctx.strokeStyle = '#44444c';
+        ctx.lineWidth = 1;
+        
+        // Horizontal middle grid line (X-Axis)
+        ctx.beginPath();
+        ctx.moveTo(0, canvas.height / 2);
+        ctx.lineTo(canvas.width, canvas.height / 2);
+        ctx.stroke();
+
+        // Vertical middle grid line (Y-Axis)
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 2, 0);
+        ctx.lineTo(canvas.width / 2, canvas.height);
+        ctx.stroke();
+    }
+
+    // Function Plotting Engine core logic
+    function plotGraph() {
+        clearCanvas();
+        let expression = screen.value;
+        
+        if (!expression) {
+            alert("Please input an expression with 'x' first (e.g., Math.sin(x))");
+            return;
+        }
+
+        // Apply automatic formatting fixes for standalone variables
+        expression = expression.replace(/(\d)(Math|x|\()/g, '$1*$2');
+
+        ctx.beginPath();
+        ctx.strokeStyle = '#00ffcc';
+        ctx.lineWidth = 2.5;
+
+        // Configuration Scales mapping pixel properties
+        const scaleX = 20; // 20 pixels = 1 horizontal unit
+        const scaleY = 20; // 20 pixels = 1 vertical unit
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        let firstPoint = true;
+
+        // Loop over the pixel width of the canvas element
+        for (let pixelX = 0; pixelX < canvas.width; pixelX++) {
+            // Convert real pixel coordinate to Cartesian algebraic 'x' value
+            let x = (pixelX - centerX) / scaleX;
+
+            try {
+                // Safely interpret runtime calculations locally per pixel loop step 
+                let evalString = expression.replace(/x/g, `(${x})`);
+                let y = eval(evalString);
+
+                if (!isNaN(y) && isFinite(y)) {
+                    // Convert algebraic coordinate systems back to specific absolute canvas pixel values
+                    let pixelY = centerY - (y * scaleY);
+
+                    if (firstPoint) {
+                        ctx.moveTo(pixelX, pixelY);
+                        firstPoint = false;
+                    } else {
+                        ctx.lineTo(pixelX, pixelY);
+                    }
+                }
+            } catch (err) {
+                // If expression fails mid-calculation string evaluation, fail cleanly
+                console.error("Plotting evaluation error: ", err);
+                break;
+            }
+        }
+        ctx.stroke();
+    }
+

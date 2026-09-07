@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+</head>
+<body>
+    <h1 id="myH1">Hello World with id</h1>
+    <h1 class="OtherH1">Hello World with class</h1>
+    <h1 >Hello World by tag</h1>
+    <button id="btn">Click</button>
+    <script>
+        // $("#btn").click(()=>{
+        //     $("#myH1").hide();
+        // });
+
+        // $("#btn").click(()=>{
+        //     $(".OtherH1").hide();
+        // });
+
+        // $("#btn").click(()=>{
+        //     $("h1").hide();
+        // });
+
+        // $("#btn").mouseout(()=>{
+        //     $("h1").hide();
+        // });
+
+        $(document).keydown(() =>{
+            console.log("Key Down!");
+        })
+    </script>
+</body>
+</html>

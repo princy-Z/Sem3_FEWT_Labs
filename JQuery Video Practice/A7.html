@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+</head>
+<body>
+    <ul id="myUl"></ul>
+    <button id="btn">Get Student</button>
+    <script>
+        $("#btn").click(() => {
+            $.get("url...",(data,status)=>{
+                console.log(data);
+            })
+        });
+        
+        $("#btn").click(() => {
+            $.get("url...",(data,status)=>{
+                $("#myUl").empty();//It used to clear old record
+                //$("#myUl").append(data);
+                for(i=0 ; i<data.length ; i++)
+                {
+                    //$("#myUl").append("<li>"+ data[i] +"</li>");
+                    $("#myUl").append("<li>"+ data[i].Studentname +"</li>");
+                }
+            })
+        });
+
+    </script>
+</body>
+</html>

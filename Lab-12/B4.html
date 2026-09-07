@@ -1,0 +1,25 @@
+<!-- write a jQUery program to get content of textbox and set to paragraph with "data" class. -->
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+
+  </head>
+  <body>
+    
+    <h2>Write Something...</h2>
+    <textarea cols="20" rows="5"></textarea>
+    <button id="btn">Submit</button>
+    <p></p>
+
+    <script>
+        $("#btn").click(()=>{
+            $("p").text($("textarea").val());
+        })
+    </script>
+  </body>
+  </html>

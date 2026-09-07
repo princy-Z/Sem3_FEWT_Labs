@@ -1,0 +1,33 @@
+<!--Vowel Count-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra-1</title>
+</head>
+<body>
+    <script>
+        n = prompt("Enter a string:");
+
+        A=0 , E=0 , I=0 ,O=0, U=0;
+
+        for( i = 0 ; i< n.length ; i++ )
+        {
+            if(n.charAt(i) == 'A' || n.charAt(i) == 'a')
+                A++;
+            if(n.charAt(i) == 'E' || n.charAt(i) == 'e')
+                E++;
+            if(n.charAt(i) == 'I' || n.charAt(i) == 'i')
+                I++;
+            if(n.charAt(i) == 'O' || n.charAt(i) == 'o')
+                O++;
+            if(n.charAt(i) == 'U' || n.charAt(i) == 'u')
+                U++;
+        }
+
+        document.write("A = "+A+" E = "+E+" I = "+I+" O = "+O+" U = "+U);
+        
+    </script>
+</body>
+</html>

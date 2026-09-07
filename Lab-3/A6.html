@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-3-6</title>
+</head>
+<body>
+    <script>
+        a = parseInt(prompt("Enter a number:"));
+        temp = a;
+        count = 0;
+        sum = 0;
+        while (a!=0) {
+            a = parseInt(a/10);
+            count++;
+        }
+        a = temp;
+        while(a != 0)
+        {
+            rem = a % 10;
+            sum = sum + Math.pow(rem,count);
+            a = parseInt(a/10);
+        }
+
+        if (temp == sum) {
+            document.write(temp+" is Armstrong...");
+        }else{
+            document.write(temp+" is not Armstrong...");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!--4. Write a JavaScript program to validate user data given from the HTML form-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <title>Lab-7-4</title>
+    <style>
+        div{
+            margin-top: 5%;
+            margin-left:25%;
+            height:50vh;
+            width:40%;
+            background-color: rgb(202, 221, 238);
+            align-items:center;
+            padding-left: 5%;
+            padding-top:5%;
+            border-radius: 50px;
+        }
+        label{
+            font-size:20px;
+        }
+        input{
+            width:60%;
+            font-size:20px;
+            padding:2px;
+        }
+        button{
+            background-color:rgb(22, 16, 135);
+            color: antiquewhite;
+            height:30px;
+            width:20%;
+            border-radius:10px;
+            margin-left:67%;
+            margin-top:2%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form onsubmit="formvalidate()">
+
+        <label for="Uname" name="Uname">Username : </label>
+        <input type="text" id="Uname"/>
+        <br/><br/>
+
+        <label for="password">Password : </label>
+        <input type="password" id="password"/>
+        <br/><br/>
+
+        <label for="Cpassword">Confirm-Password : </label>
+        <input type="password" id="Cpassword"/>
+        <br/><br/>
+
+        <label for="dob">DOB : </label>
+        <input type="tel" id="dob"/>
+        <br/><br/>
+
+        <label for="Erno">Enrollment No. : </label>
+        <input type="tel" id="Erno"/>
+        <br/><br/>
+
+        <label for="Email">Email :</label>
+        <input type="email" id="Email"/>
+        <br/><br/>
+
+
+        <button>Submit</button>
+    </form>
+</div>
+<script>
+
+    function Username() 
+    {
+        //1) username must be of minimum 8 characters 
+
+        Username = document.getElementById("Uname").value;
+
+        if(Username.length < 8)
+        {
+         alert("Username must be at least 8 character!");
+         return;
+        }
+    }
+    function Password()
+    {
+        //2) password must contain at least 1 digit and 1 special character and should be between 8-12 characters 
+        
+        passpattern = /^[A-Za-z\d\W]{8,12}$/ ;
+        re = new RegExp(passpattern);
+        password = document.getElementById("password").value;
+
+        if(!passpattern.test(password))
+        {
+            alert("password must contain at least 1 digit and 1 special character and should be between 8-12 characters");
+            return;
+        }
+    }
+    function CPassword()
+    {    //3) password and repeat password must be same
+        Confirm_Password = document.getElementById("Cpassword") ;
+        if(password != Confirm_Password)
+        {
+            alert("Password not matched!");
+            return;
+        }
+    }
+    function Age()
+    {
+        //4) age must be greater than 18 (calculate from date of birth)
+        
+        dob = document.getElementById("dob");
+
+        birthdate = new Date(dob);
+        currentdate = new Date();
+
+        age = currentdate.getFullYear() - birthdate.getFullYear();
+
+        if(currentdate.getMonth() < Birthdate.getMonth() || currentdate.getMonth() == Birthdate.getMonth() && 
+            currentdate.getDate() < Birthdate.getDate())
+            age--;
+
+        if(age <= 18)
+        {
+            alert("You must be older than 18.");
+            return;
+        }
+    }
+    function EnrmNo()
+    {
+        //5) enrollment must be of 11 digits 
+        EnrollmentNo= document.getElementById("Erno").value;
+
+        Enpattern = /^25{9}$/;
+        re = new RegExp(Enpattern);
+
+        if(!Enpattern.test(EnrellmentNo))
+        {
+            alert("Enrollment number must be exactly 11 digits.");
+            return;
+        }
+    }
+        //6) email validation
+
+
+</script>
+</body>
+</html>

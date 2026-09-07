@@ -1,0 +1,61 @@
+<!-- 2. WAP to recognize which mouse event is ƒired. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-8-1</title>
+    <style>
+        #Event{
+            height:50vh;
+            width:60%;
+            background-color: rgb(210, 184, 223);
+            text-align: center;
+            font-size: large;
+            color: rgb(115, 8, 134);
+            font-size:20px;
+            padding-top:20%;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--<button id="clickbtn" ></button>-->
+    <br/>
+    <div id="Event" onclick="clicked()" ondblclick="Double()"" onmousedown="Mousedown()" onmouseup="Mouseup()"
+         onmousemove="Mousemove()" onmouseout="Mouseout()" onmouseenter="Mouseenter()">click here</div>
+
+    <script>
+        function clicked()
+        {
+            document.getElementById("Event").innerHTML = "clicked!";
+        }
+        function Double()
+        {
+            document.getElementById("Event").innerHTML = "Double Clicked!";
+        }
+        function Mousedown()
+        {
+            document.getElementById("Event").innerHTML = "Mouse Down!";
+        }
+        function Mouseup()
+        {
+            document.getElementById("Event").innerHTML = "Mouse up!";
+        }
+        function Mousemove()
+        {
+            document.getElementById("Event").innerHTML = "Mouse Move!";
+        }
+        function Mouseout()
+        {
+            document.getElementById("Event").innerHTML = "Mouse Out!";
+        }
+        function Mouseenter()
+        {
+            document.getElementById("Event").innerHTML = "Mouse Out!";
+        }
+        
+    </script>
+</body>
+</html>

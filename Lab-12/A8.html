@@ -1,0 +1,31 @@
+ <!-- write a jQuery to hide all siblings when clicked on a button. -->
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+
+  </head>
+  <body>
+    
+    <div class="Par">
+        <h1>Child1</h1>
+        <p>Child2</p>
+        <div class="subPar"> 
+            <div>GrandChild1</div>
+            <div>GrandChild2</div>
+        </div>
+    </div>
+    <button id="btn">Click</button>
+
+    <script>
+        $("#btn").click(()=>{
+            $(".subPar").siblings().hide();
+        })
+
+    </script>
+  </body>
+  </html>

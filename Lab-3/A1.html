@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-3-1</title>
+</head>
+<body>
+    <script>
+        a = parseInt(prompt("Enter number 1:"));
+        b = parseInt(prompt("Enter number 2:"));
+
+        choice = prompt("Enter any one operator(+,-,*,/):");
+
+        if(choice == '+'){
+            ans = a + b;
+            document.write("Sum = " + ans);
+        }
+        else if(choice == '-'){
+            ans = a - b;
+            document.write("Subtraction = " + ans);
+        }
+        else if(choice == '*'){
+            ans = a * b;
+            document.write("Multiplication = " + ans);
+        }
+        else if(choice == '/'){
+            if(b == 0){
+                document.write("Can't divide by Zero...");
+            }else{
+                ans = a/b;
+                document.write("Division = "+ans);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>lab-1-c</title>
+	<style>
+		div{
+			width:100px;
+			height: 100px;
+			position:absolute;
+			background-color: red;
+			border-radius: 50%;
+			animation-name: Rotatebox;
+			animation-duration: 3s;
+			animation-delay: 2s;
+		}
+
+		@keyframes Rotatebox{
+			0%{
+				top:0px;
+				left:0px;
+				background-color: orange;
+			}
+			25%{
+				margin-top:200px;
+				margin-left:0px;
+				background-color: yellow;
+			}
+			50%{
+				margin-top:200px;
+				margin-left:200px;
+				background-color: green;
+			}
+			75%{
+				margin-top:0px;
+				margin-left:200px;
+				background-color: lightskyblue;
+			}
+			100%{
+				margin-top:0px;
+				margin-left:0px;
+				background-color: blue;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

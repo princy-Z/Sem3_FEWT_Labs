@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+</head>
+<body>
+    <h1 id="myH1">Hello World with id</h1>
+    <h1 class="OtherH1">Hello World with class</h1>
+    <h1 >Hello World by tag</h1>
+    <button id="btn1">hide</button>
+    <button id="btn2">show</button>
+    <button id="btnA">Hide/Show</button>
+    <button id="btn3">Fadein</button>
+    <button id="btn4">FadeOut</button>
+    <button id="btnB">FadeToggle</button>
+    <script>
+        $("#btn1").click(()=>{
+            $("#myH1").hide();
+        });
+
+        $("#btn2").click(()=>{
+            $("#myH1").show();
+        });
+
+        $("#btnA").click(()=>{
+            $("#myH1").toggle();
+        });
+
+        $("#btn3").click(()=>{
+            $("#myH1").fadeIn(1000);
+            alert("Hiii...");
+        });
+
+        $("#btn4").click(()=>{
+            $("#myH1").fadeOut(1000,()=>{
+                alert("Hello...")
+            });
+        });
+
+        $("#btnB").click(()=>{
+            $("#myH1").fadeToggle(1000);
+        });
+    </script>
+</body>
+</html>

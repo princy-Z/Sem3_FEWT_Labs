@@ -1,0 +1,38 @@
+       div{
+            height:80%;
+            width:35%;
+            background-color:rgb(204, 212, 225);
+            margin-top:11%;
+            margin-left:30%;
+            padding:2%;
+            font-size:22px;
+            color:rgb(28, 28, 108);
+            text-align: center;
+            border-radius:50px;
+            box-shadow: 7px 7px 7px 7px rgb(111, 121, 135);
+        }
+        h1{
+            margin-bottom:7%;
+        }
+        input{
+            border-radius:7px;
+            border:2px solid rgb(28, 28, 108);
+            font-size:19px;
+            padding:3px;
+            margin-left:3px;
+        }
+        label{
+            font-size:20px;
+            font-weight: 600;
+        }
+        button{
+            border-radius:7px;
+            background-color:rgb(28, 28, 108);
+            color: white;
+            font-weight: 500;
+            font-size: 25px;
+            padding:2%;
+            width:50%;
+            height:5%;
+            margin-top:7%;
+        }

@@ -1,0 +1,27 @@
+<!-- write a jQuery program to change background color of all input tags when 
+ clicked on a button -->
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    
+    <input type="text" placeholder="First Name"/>
+    <input type="text" placeholder="Last Name"/>
+    <input type="text" placeholder="Email"/>
+    <button id="btn">Click</button>
+
+    <script>
+        $("#btn").click(()=>{
+            $("input").css({"backgroundColor" : "rgb(240, 147, 6)","color" : "white"});
+        })
+    </script>
+  </body>
+  </html>

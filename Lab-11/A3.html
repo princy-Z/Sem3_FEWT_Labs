@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        marks = [90,95,94,93,92];
+        sum = 0;
+
+        for(mark of marks)
+        {
+            document.write("Mark : "+mark+"<br/>");
+        }
+        for(mark of marks)
+        {
+            sum += mark;
+        }
+        document.write("Sum : "+sum+"<br/>");
+        avg = sum / marks.length;
+        document.write("Avg : "+avg+"<br/>");
+
+    </script>
+</body>
+</html>

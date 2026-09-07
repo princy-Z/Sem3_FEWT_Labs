@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <style>
+        .redBG{
+            background-color: red;
+        }
+        .blueBG{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 id="myH1">Hello World with id</h1>
+    <h1 class="OtherH1">Hello World with class</h1>
+    <h1 >Hello World by tag</h1>
+    <input type="text" id="myTxt"/>
+    <div id="myDiv">Hello <span>World</span> DIV</div>
+    <button id="btn">Click</button> -->
+
+    <!-- <ul id="UL">
+        <li>Rajkot</li>
+        <li>Morbi</li>
+        <li>Surat</li>
+    </ul>
+    <input type="text" id="myTex"/>
+    <button id="App">Append</button>
+    <button id="Pre">Append</button> -->
+
+    <h1 class="blueBG" id="myH1">Hello World</h1>
+    <button id="btnColor">Click</button>
+    <script>
+        // $("#btnColor").click(()=>{
+        //     $("#myH1").addClass("redBG")
+        // });
+
+        // $("#btnColor").click(()=>{
+        //     $("#myH1").removeClass("blueBG")
+        // });
+
+        // $("#btnColor").click(()=>{
+        //     $("#myH1").toggleClass("blueBG")
+        // });
+
+        $("#btnColor").click(()=>{
+            $("#myH1").css("background-color","pink");
+            console.log($("#myH1").css("font-size"))
+        });
+
+        $("#App").click(()=>{
+            $("#UL").append("<li>Jamnagar</li>")
+        });
+
+        $("#Pre").click(()=>{
+            $("#UL").prepend("<li>Ahmdabad</li>")
+        });
+
+        $("#App").click(()=>{
+            $("#UL").append("<li>"+$("#myTex").val()+"</li>")
+        });
+
+        $("#Pre").click(()=>{
+            $("#UL").prepend("<li>"+$("#myTex").val()+"</li>")
+        });
+
+        $("#App").click(()=>{
+            $("#UL").after("<li>"+$("#myTex").val()+"</li>")
+        });
+
+        $("#App").click(()=>{
+            $("#UL").before("<li>"+$("#myTex").val()+"</li>")
+        });
+
+        // $("#App").click(()=>{
+        //     $("#UL").remove();
+        // });
+
+        // $("#App").click(()=>{
+        //     $("#UL").empty();
+        // });
+
+        // $("#btn").click(()=>{
+        //     console.log($("#myDiv").text());
+        // });
+
+        // $("#btn").click(()=>{
+        //     console.log($("#myDiv").html());
+        // });
+
+        // $("#btn").click(()=>{
+        //     console.log($("#myTxt").val());
+        // });
+
+        // $("#btn").click(()=>{
+        //     console.log($("#myDiv").text("This is my new text."));
+        // });
+
+        // $("#btn").click(()=>{
+        //     console.log($("#myDiv").html("This is my <h2>new</h2> text."));
+        // });
+
+        // $("#btn").click(()=>{
+        //     console.log($("#myTxt").val("Some Value."));
+        // });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-4-5</title>
+</head>
+<body>
+    <script>
+        num = parseInt(prompt("Enter a 2-digit number:"));
+        result = 1;
+        lastDigit = num % 10;
+        firstDigit = Math.floor(num / 10);
+        
+        for(i=1 ; i <= lastDigit ; i++)
+        {
+            result = result * firstDigit;
+        }
+        document.write(result);
+    </script>
+</body>
+</html>

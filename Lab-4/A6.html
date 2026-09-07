@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-4-6</title>
+</head>
+<body>
+    <script>
+        S =parseInt(prompt("Enter a num:"));
+        temp = S;
+        arr1 = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+        arr2 = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"];
+        arr3 = ["","","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"];
+
+        word = "";
+
+        if(isNaN(S)){
+            document.write("Not a number...");
+        }else 
+        {
+            if(S>999)
+              document.write("Number is out of range...");
+            else if(S<10)
+              word += arr1[S];
+            else if(S<20)
+              word += arr2[S-10];
+            else if(S<100)
+            {
+                word += arr3[Math.floor(S/10)];
+                if(S%10 != 0)
+                {
+                    word += arr[S%10];
+                }
+            }
+            else if(S < 1000)
+            {
+                word += arr1[Math.floor(S / 100)] + " hundred" + " ";
+                rem = S % 100;
+
+                if(rem > 0){
+                    if(rem<10)
+                        word += arr1[rem];
+                    else if(rem<20)
+                        word += arr2[rem-10];
+                    else
+                    {
+                        word += arr3[Math.floor(rem/10)];
+                        if(rem%10 != 0)
+                        {
+                            word += " "+ arr1[rem%10];
+                        }
+                    } 
+                }
+            }
+        }
+            document.write(word);
+    </script>
+</body>
+</html>

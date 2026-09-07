@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class car{
+            constructor(company,model){
+                this.company = company;
+                this.model = model;
+            }
+            display()
+            {
+                document.write("Company : "+this.company + '<br/>');
+                document.write("Model : "+this.model + '<br/>');
+            }
+        }
+        obj1 = new car('Mahindra','XUV700');
+        obj2 = new car('Maruti Suzuki','Alto800');
+        obj1.display();
+        obj2.display();
+    </script>
+</body>
+</html>
