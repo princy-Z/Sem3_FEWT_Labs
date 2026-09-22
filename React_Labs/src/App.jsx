@@ -1,7 +1,9 @@
 import { Link, BrowserRouter, Route, Routes } from "react-router-dom"
 import Login from "./Lab-19/Login"
-// import "./App.css"
-import Calc from "./Lab-22/Calc"
+// import A1 from "./Lab-23/A1";
+import "./App.css"
+import A1 from "./Lab-24/A1"
+// import Calc from "./Lab-22/Calc"
 
 // import Hellofun from "./Lab-15/A1"
 // import HelloClass from "./Lab-15/B2"
@@ -123,13 +125,33 @@ function App() {
     // )
 {/*------------------------------------------------------------------------------------*/}
 
-    {/*Lab-22*/}
+    // {/*Lab-22*/}
 
-    return(
+    // return(
+    //   <>
+    //   <Calc/>
+    //   </>
+    // )
+
+{/*------------------------------------------------------------------------------------*/}
+
+    // {/*Lab-23*/}
+
+    // return (
+    //   <>
+    //     <A1/>
+    //   </>
+    // );
+
+{/*------------------------------------------------------------------------------------*/}
+      {/*Lab-22*/}
+      return(
       <>
-      <Calc/>
+      <A1/>
       </>
-    )
+      )
+
 }
+
 
 export default App

@@ -1,38 +1,125 @@
-       div{
-            height:80%;
-            width:35%;
-            background-color:rgb(204, 212, 225);
-            margin-top:11%;
-            margin-left:30%;
-            padding:2%;
-            font-size:22px;
-            color:rgb(28, 28, 108);
-            text-align: center;
-            border-radius:50px;
-            box-shadow: 7px 7px 7px 7px rgb(111, 121, 135);
-        }
-        h1{
-            margin-bottom:7%;
-        }
-        input{
-            border-radius:7px;
-            border:2px solid rgb(28, 28, 108);
-            font-size:19px;
-            padding:3px;
-            margin-left:3px;
-        }
-        label{
-            font-size:20px;
-            font-weight: 600;
-        }
-        button{
-            border-radius:7px;
-            background-color:rgb(28, 28, 108);
-            color: white;
-            font-weight: 500;
-            font-size: 25px;
-            padding:2%;
-            width:50%;
-            height:5%;
-            margin-top:7%;
-        }
+/* div {
+  height: 80%;
+  width: 35%;
+  background-color: rgb(204, 212, 225);
+  margin-top: 11%;
+  margin-left: 30%;
+  padding: 2%;
+  font-size: 22px;
+  color: rgb(28, 28, 108);
+  text-align: center;
+  border-radius: 50px;
+  box-shadow: 7px 7px 7px 7px rgb(111, 121, 135);
+}
+h1 {
+  margin-bottom: 7%;
+}
+input {
+  border-radius: 7px;
+  border: 2px solid rgb(28, 28, 108);
+  font-size: 19px;
+  padding: 3px;
+  margin-left: 3px;
+}
+label {
+  font-size: 20px;
+  font-weight: 600;
+}
+button {
+  border-radius: 7px;
+  background-color: rgb(28, 28, 108);
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
+  padding: 2%;
+  width: 50%;
+  height: 5%;
+  margin-top: 7%;
+}
+ */
+
+/*===================Lab-23==================*/
+
+.detailDiv {
+  height: auto;
+  width: 50%;
+  margin: 2% 7% ;
+  text-align: center;
+  box-shadow: 0 0 14px 2px rgb(54, 56, 58);
+  background-color: aliceblue;
+  border: 2px solid rgb(3, 12, 65);
+  border-radius: 10px;
+  padding: 2%;
+  font-size: larger;
+  font-weight: 600;
+}
+
+h2 {
+  background-color: rgb(3, 12, 65);
+  color: whitesmoke;
+  text-align: center;
+  border-radius: 10px;
+}
+
+input {
+  margin: 1%;
+  border: 1px solid black;
+  border-radius: 7px;
+}
+
+input:focus-within {
+  border: 3px solid rgb(3, 12, 65);
+  box-shadow: 0 0 8px 2px rgb(54, 56, 58);
+}
+
+button {
+  width: 30%;
+  background-color: rgb(11, 128, 21);
+  border-radius: 10px;
+  color: whitesmoke;
+  font-size:22px;
+  font-weight: 400;
+  padding: 5px;
+  margin: 2%;
+}
+
+button:hover{
+      box-shadow: 0 0 14px 2px rgb(54, 56, 58);
+}
+
+/* ======================lab-24===================== */
+
+table{
+  width:90%;
+  margin-left:7%;
+}
+
+#editBtn{
+  width: 100%;
+  background-color: rgb(51, 4, 221);
+  border-radius: 10px;
+  color: whitesmoke;
+  font-size:22px;
+  font-weight: 400;
+  padding: 5px;
+  margin: 2%;
+}
+
+#deleteBtn{
+  width: 100%;
+  background-color: rgb(193, 13, 13);
+  border-radius: 10px;
+  color: whitesmoke;
+  font-size:22px;
+  font-weight: 400;
+  padding: 5px;
+  margin-top: 10%;
+}
+
+#editBtn:hover{
+      box-shadow: 0 0 14px 2px rgb(54, 56, 58);
+}
+
+#deleteBtn:hover{
+      box-shadow: 0 0 14px 2px rgb(54, 56, 58);
+}

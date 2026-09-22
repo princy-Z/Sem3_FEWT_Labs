@@ -4,7 +4,7 @@ export default function Calc() {
 
   const btncss = {
     height:"90%",
-    width:"90px",
+    width:"90%",
     backgroundColor : "black",
     color : "white",
     borderRadius:"10px",
@@ -27,22 +27,20 @@ export default function Calc() {
   const handleClick = (value) =>
   {
       if(value === "=")
-      {
         try{
           setExp(eval(exp).toString());
         }catch{
           setExp("Error!");
         }
-      }else if(value === "AC")
-      {
+
+      else if(value === "AC")
         setExp("");
-      }else if(value === "<-")
-      {
+
+      else if(value === "<-")
         setExp(exp.slice(0,-1));
-      }else
-      {
+
+      else
         setExp(exp + value);
-      }
   }
 
   return (
