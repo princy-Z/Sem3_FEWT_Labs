@@ -31,7 +31,7 @@ export default function A1() {
       setFacultyList(updateList);
 
       setEditInadex(null);
-    } else {
+    }else {
       setFacultyList([...facultyList, { ...data }]);
     }
 
@@ -49,10 +49,9 @@ export default function A1() {
   };
 
   const handleDelete = (index) => {
-    const updateList = [
-      ...facultyList.slice(0, index),
-      ...facultyList.slice(index + 1),
-    ];
+    // ...facultyList.slice(0, index),
+    // ...facultyList.slice(index + 1),
+    const updateList = facultyList.filter((fac, i) => i !== index);
 
     setFacultyList(updateList);
 
