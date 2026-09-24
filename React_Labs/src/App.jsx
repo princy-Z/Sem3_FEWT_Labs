@@ -1,8 +1,9 @@
-import { Link, BrowserRouter, Route, Routes } from "react-router-dom"
-import Login from "./Lab-19/Login"
+import { Link, BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./Lab-19/Login";
 // import A1 from "./Lab-23/A1";
-import "./App.css"
-import A1 from "./Lab-24/A1"
+import "./App.css";
+// import A1 from "./Lab-24/A1"
+import ContentRender from "./Lab-25/ContentRender";
 // import Calc from "./Lab-22/Calc"
 
 // import Hellofun from "./Lab-15/A1"
@@ -29,10 +30,10 @@ import A1 from "./Lab-24/A1"
 // import { useState } from "react"
 // import A from "./Lab-18/A2/A"
 
-
 function App() {
-
-    {/* Lab-15 */}
+  {
+    /* Lab-15 */
+  }
 
   // return (
   //   <>
@@ -40,118 +41,154 @@ function App() {
   //     <HelloClass/>
   //   </>
   // )
-{/*------------------------------------------------------------------------------------*/}
-      {/* Lab-16 */}
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
+  {
+    /* Lab-16 */
+  }
 
-    // return(  
-    //   <>
-    //   {/* <Props n1={10} n2={30} />
-    //   <br/>
-    //   <Events />
-    //   <Render value={true} /> */}
-    //   </>
-    //   )
-{/*------------------------------------------------------------------------------------*/}
-      {/* Lab-17  */}
+  // return(
+  //   <>
+  //   {/* <Props n1={10} n2={30} />
+  //   <br/>
+  //   <Events />
+  //   <Render value={true} /> */}
+  //   </>
+  //   )
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
+  {
+    /* Lab-17  */
+  }
 
-      // return(
-      //   <>
-      //     <A1/>
-      //     <B2/>
-      //     <br/>
-      //     <B3/>
-      // </>
-      // )
-{/*------------------------------------------------------------------------------------*/}
-    {/* Lab-20 */}
+  // return(
+  //   <>
+  //     <A1/>
+  //     <B2/>
+  //     <br/>
+  //     <B3/>
+  // </>
+  // )
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
+  {
+    /* Lab-20 */
+  }
 
-    // return(
-    //   <>
-    //   <BrowserRouter>
-    //     <nav>
-    //       <Link to="/">Home</Link>
-    //       <Link to="/contact">Contact Us</Link>
-    //       <Link to="/about">About Us</Link>
-    //     </nav>
+  // return(
+  //   <>
+  //   <BrowserRouter>
+  //     <nav>
+  //       <Link to="/">Home</Link>
+  //       <Link to="/contact">Contact Us</Link>
+  //       <Link to="/about">About Us</Link>
+  //     </nav>
 
-    //     <Routes>
-    //       <Route path="/" element={<Home />}></Route>
-    //       <Route path="/contact" element={<Contact />}></Route>
-    //       <Route path="/about" element={<About />}></Route>
-    //     </Routes>
-    //   </BrowserRouter> 
+  //     <Routes>
+  //       <Route path="/" element={<Home />}></Route>
+  //       <Route path="/contact" element={<Contact />}></Route>
+  //       <Route path="/about" element={<About />}></Route>
+  //     </Routes>
+  //   </BrowserRouter>
 
-    //   <BrowserRouter>
-    //     <Routes>
-    //       <Route path="/" element={<Layout/>}>
-    //         <Route index element={<Home/>}/>
-    //         <Route path="/about" element={<About/>}/>
-    //         <Route path="/contact" element={<Contact/>}/>
-    //       </Route>
-    //     </Routes>
-    //    </BrowserRouter>
-    //    </>
-    // )
-{/*------------------------------------------------------------------------------------*/}
-      {/* Lab-21 */}
+  //   <BrowserRouter>
+  //     <Routes>
+  //       <Route path="/" element={<Layout/>}>
+  //         <Route index element={<Home/>}/>
+  //         <Route path="/about" element={<About/>}/>
+  //         <Route path="/contact" element={<Contact/>}/>
+  //       </Route>
+  //     </Routes>
+  //    </BrowserRouter>
+  //    </>
+  // )
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
+  {
+    /* Lab-21 */
+  }
 
-    // return(
-    //   <>
-    //     <My_useState/>
-    //     <My_useEffect/>
-    //   </>
-    // )
+  // return(
+  //   <>
+  //     <My_useState/>
+  //     <My_useEffect/>
+  //   </>
+  // )
 
-{/*------------------------------------------------------------------------------------*/}
-      {/*Lab-18*/}
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
+  {
+    /*Lab-18*/
+  }
 
-    //     const [name,setName] = useState("Hello");
-    //     const [text,setText] = useState("Hello");
+  //     const [name,setName] = useState("Hello");
+  //     const [text,setText] = useState("Hello");
 
-    //     return(
-    //       <>      
-    //       <A name = {name} setName = {setName}/>
-    //       <A text = {text} setText={setText} />
-    //       </>
-    //     )
+  //     return(
+  //       <>
+  //       <A name = {name} setName = {setName}/>
+  //       <A text = {text} setText={setText} />
+  //       </>
+  //     )
 
-{/*------------------------------------------------------------------------------------*/}
-    {/*Lab-19*/}
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
+  {
+    /*Lab-19*/
+  }
 
-    // return(
-    //   <>
-    //   <Login/>
-    //   </>
-    // )
-{/*------------------------------------------------------------------------------------*/}
+  // return(
+  //   <>
+  //   <Login/>
+  //   </>
+  // )
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
 
-    // {/*Lab-22*/}
+  // {/*Lab-22*/}
 
-    // return(
-    //   <>
-    //   <Calc/>
-    //   </>
-    // )
+  // return(
+  //   <>
+  //   <Calc/>
+  //   </>
+  // )
 
-{/*------------------------------------------------------------------------------------*/}
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
 
-    // {/*Lab-23*/}
+  // {/*Lab-23*/}
 
-    // return (
-    //   <>
-    //     <A1/>
-    //   </>
-    // );
+  // return (
+  //   <>
+  //     <A1/>
+  //   </>
+  // );
 
-{/*------------------------------------------------------------------------------------*/}
-      {/*Lab-22*/}
-      return(
-      <>
-      <A1/>
-      </>
-      )
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
+  //   {/*Lab-24*/}
+  //   return(
+  //   <>
+  //   <A1/>
+  //   </>
+  //   )
+  {
+    /*------------------------------------------------------------------------------------*/
+  }
+  {
+    /*Lab-23*/
+  }
 
+  return <ContentRender />;
 }
 
-
-export default App
+export default App;
