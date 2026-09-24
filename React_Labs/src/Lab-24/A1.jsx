@@ -44,7 +44,14 @@ export default function A1() {
   };
 
   const handleEdit = (index) => {
-    setData(facultyList[index]);
+    // setData(facultyList[index]);
+
+    setData({
+      FacultyID : facultyList[index].FacultyID,
+      FacultyName: facultyList[index].FacultyName,
+      Facultyexp : facultyList[index].Facultyexp,
+      FacultyImage : facultyList[index].FacultyImage
+    });
     setEditInadex(index);
   };
 
